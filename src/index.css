@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.Container {
+  display: block;
+  text-align: center;
+  margin: 33px;
+  width: 600px;
+  border: 1px solid black;
+  border-radius: 7px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
