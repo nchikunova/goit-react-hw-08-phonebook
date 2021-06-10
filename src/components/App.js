@@ -1,6 +1,6 @@
 import React, { Component, Suspense, lazy } from 'react';
 import AppBar from './AppBar/AppBar';
-import { Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import authOperations from './redux/auth/auth-operations';
 import PublicRoute from './PublicRoute';
@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <div className="Container">
       <AppBar />
-      <Suspense fallback={<p>Phonebook is loading...</p>}>
+      <Suspense fallback={<p>Is loading...</p>}>
         <Switch>
           <PublicRoute path="/" exact component={HomeView} />
           <PublicRoute
@@ -46,6 +46,10 @@ class App extends Component {
             redirectTo="/login"
             component={ContactsView}
           />
+          <Route
+           path="*">
+            <h2 style={{textAlign: "center", marginTop: "20px", color: "red"}}>Page not found!</h2>
+          </Route>
         </Switch>
       </Suspense>
         <ToastContainer autoClose={3700} />
